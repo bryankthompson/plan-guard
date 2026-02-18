@@ -1,0 +1,14 @@
+{
+  "version": "1",
+  "plugins": [
+    {
+      "name": "plan-guard",
+      "version": "1.0.0",
+      "description": "Automatic plan file backup and recovery after context compacting. Never lose a plan to compaction again.",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/kodareef5/plan-guard"
+      }
+    }
+  ]
+}

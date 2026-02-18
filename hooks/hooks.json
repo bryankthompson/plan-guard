@@ -1,0 +1,44 @@
+{
+  "description": "plan-guard: Automatic plan file backup and recovery after context compacting",
+  "hooks": {
+    "PreCompact": [
+      {
+        "matcher": "auto|manual",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/backup-plan.sh",
+            "timeout": 10,
+            "statusMessage": "Backing up plan files..."
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/reinject-plan.sh",
+            "timeout": 10,
+            "statusMessage": "Restoring plan context..."
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/plan-write-recovery.sh",
+            "timeout": 10,
+            "statusMessage": "Recovering plan file..."
+          }
+        ]
+      }
+    ]
+  }
+}
