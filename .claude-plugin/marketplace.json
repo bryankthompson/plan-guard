@@ -10,8 +10,9 @@
       "version": "1.1.0",
       "description": "Automatic plan file backup and recovery after context compacting. Session-aware reinjection so concurrent sessions don't surface each other's plans.",
       "source": {
-        "type": "git",
-        "url": "https://github.com/bryankthompson/plan-guard"
+        "source": "url",
+        "url": "https://github.com/bryankthompson/plan-guard.git",
+        "sha": "6f8d8fedec4dd7a4fbbd55e536eeaf00cc7a6b48"
       }
     }
   ]
