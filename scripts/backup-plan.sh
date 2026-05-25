@@ -9,7 +9,8 @@
 # Files that already have ANY YAML frontmatter (any `---` first line) are
 # left untouched, so we don't clobber agent-authored metadata.
 
-PLANS_DIR="$HOME/.claude/plans"
+# PLANS_DIR is overridable for test isolation; defaults to the real plans dir.
+PLANS_DIR="${PLANS_DIR:-$HOME/.claude/plans}"
 BACKUP_DIR="$PLANS_DIR/.backups"
 
 if [ ! -d "$PLANS_DIR" ]; then
