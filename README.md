@@ -71,3 +71,5 @@ When a Write or Edit to a plan file fails:
 ## License
 
 MIT
+
+<!-- self-pin auto-bump enabled 2026-05-25 — see .github/workflows/bump-self-pin.yml -->
