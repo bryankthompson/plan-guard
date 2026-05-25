@@ -1,4 +1,8 @@
 {
+  "name": "bryankthompson-plan-guard",
+  "owner": {
+    "name": "Bryan Thompson"
+  },
   "version": "1",
   "plugins": [
     {
