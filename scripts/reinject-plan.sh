@@ -11,7 +11,8 @@
 # the current session id, so any plan that has been compacted at least once
 # will be recoverable.
 
-PLANS_DIR="$HOME/.claude/plans"
+# PLANS_DIR is overridable for test isolation; defaults to the real plans dir.
+PLANS_DIR="${PLANS_DIR:-$HOME/.claude/plans}"
 [ ! -d "$PLANS_DIR" ] && exit 0
 
 # Read hook input: SessionStart receives {session_id, source, ...} via stdin
