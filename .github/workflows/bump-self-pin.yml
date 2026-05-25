@@ -32,7 +32,9 @@ jobs:
     # Loop guard: skip when our own bump commit re-triggered the workflow.
     # In practice GitHub's GITHUB_TOKEN push policy already prevents this,
     # but the prefix check is a cheap belt-and-suspenders.
-    if: ${{ !startsWith(github.event.head_commit.message, 'marketplace: bump SHA pin') }}
+    # YAML-quote the whole expression: the colon inside the literal
+    # 'marketplace: bump SHA pin' otherwise confuses the YAML parser.
+    if: "${{ !startsWith(github.event.head_commit.message, 'marketplace: bump SHA pin') }}"
     steps:
       - uses: actions/checkout@v4
         with:
